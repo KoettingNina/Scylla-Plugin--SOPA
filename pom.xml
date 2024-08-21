@@ -225,8 +225,8 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>CostDriver Plugin for bptlab/scylla</name>
-            <url>https://maven.pkg.github.com/INSM-TUM-Teaching/cost_driver</url>
+            <name>Scylla Plugin for the SOPA Framework</name>
+            <url>https://maven.pkg.github.com/INSM-TUM/Scylla-Plugin--SOPA</url>
         </repository>
     </distributionManagement>
 
