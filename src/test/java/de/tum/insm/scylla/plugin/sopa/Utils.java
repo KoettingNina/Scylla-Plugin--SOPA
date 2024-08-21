@@ -1,4 +1,4 @@
-package cost_driver;
+package de.tum.insm.scylla.plugin.sopa;
 
 import de.hpi.bpt.scylla.exception.ScyllaValidationException;
 import org.jdom2.Document;
@@ -8,7 +8,6 @@ import org.jdom2.input.SAXBuilder;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

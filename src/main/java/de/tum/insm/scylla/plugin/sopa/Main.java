@@ -1,4 +1,4 @@
-package cost_driver;
+package de.tum.insm.scylla.plugin.sopa;
 
 import de.hpi.bpt.scylla.Scylla;
 import de.hpi.bpt.scylla.plugin_loader.PluginLoader;

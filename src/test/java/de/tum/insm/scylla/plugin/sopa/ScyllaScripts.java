@@ -1,4 +1,4 @@
-package cost_driver;
+package de.tum.insm.scylla.plugin.sopa;
 
 import de.hpi.bpt.scylla.SimulationManager;
 import de.hpi.bpt.scylla.plugin_loader.PluginLoader;
@@ -17,8 +17,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
-
-import static cost_driver.Utils.*;
 
 /**
  * This class contains various useful scripts for the programmatic usage of scylla.<br>
@@ -41,9 +39,9 @@ public class ScyllaScripts {
 
         int[] clerkCountsToTest = new int[]{4};
         int numInstances = 10;
-        String globalConf = TEST_PATH + GLOBAL_CONFIGURATION_FILE;
-        String model = TEST_PATH + SIMULATION_MODEL_FILE;
-        String simConf = TEST_PATH + SIMULATION_CONFIGURATION_FILE;
+        String globalConf = Utils.TEST_PATH + Utils.GLOBAL_CONFIGURATION_FILE;
+        String model = Utils.TEST_PATH + Utils.SIMULATION_MODEL_FILE;
+        String simConf = Utils.TEST_PATH + Utils.SIMULATION_CONFIGURATION_FILE;
 
         try {
             SAXBuilder builder = new SAXBuilder();
@@ -83,7 +81,7 @@ public class ScyllaScripts {
                         globalConf,
                         model,
                         simConf,
-                        TEST_PATH + numClerks + "_" + numInstances + "_" + new SimpleDateFormat("yy_MM_dd_HH_mm_ss_SSS").format(new Date()) + "/");
+                        Utils.TEST_PATH + numClerks + "_" + numInstances + "_" + new SimpleDateFormat("yy_MM_dd_HH_mm_ss_SSS").format(new Date()) + "/");
 
         }
     }

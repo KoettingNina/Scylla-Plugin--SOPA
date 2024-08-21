@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <groupId>de.hpi.bpt</groupId>
-    <artifactId>cost_driver</artifactId>
+    <groupId>de.tum.insm.scylla.plugin</groupId>
+    <artifactId>sopa</artifactId>
     <version>0.1.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 

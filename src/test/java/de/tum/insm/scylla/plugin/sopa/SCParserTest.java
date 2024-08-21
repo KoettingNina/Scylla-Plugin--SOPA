@@ -1,4 +1,4 @@
-package cost_driver;
+package de.tum.insm.scylla.plugin.sopa;
 
 import de.hpi.bpt.scylla.SimulationTest;
 import de.hpi.bpt.scylla.exception.ScyllaValidationException;
@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.util.*;
 
-import static cost_driver.Utils.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SCParserTest extends SimulationTest {
@@ -24,9 +23,9 @@ class SCParserTest extends SimulationTest {
         PluginLoader.getDefaultPluginLoader().activateNone().loadPackage(Main.class.getPackageName());
 
         runSimpleSimulation(
-                GLOBAL_CONFIGURATION_FILE,
-                SIMULATION_MODEL_FILE,
-                SIMULATION_CONFIGURATION_FILE);
+                Utils.GLOBAL_CONFIGURATION_FILE,
+                Utils.SIMULATION_MODEL_FILE,
+                Utils.SIMULATION_CONFIGURATION_FILE);
 
         //TODO insert proper fixture
         Map<String, Integer>  identifiersToNodeIds = simulationManager.getProcessModels().get("Process_0vv8a1n").getIdentifiersToNodeIds();
@@ -51,7 +50,7 @@ class SCParserTest extends SimulationTest {
     void testParsingVariants() throws IOException, ScyllaValidationException, JDOMException {
         PluginLoader.getDefaultPluginLoader().activateNone().loadPackage(Main.class.getPackageName());
 
-        setGlobalSeed(DEFAULT_SEED);
+        setGlobalSeed(Utils.DEFAULT_SEED);
 
         afterParsing(() -> { //Needs to be run directly after parsing, as stack of calculated variants is consumed during simulation
             SimulationConfiguration actualSimConfig = getSimulationConfiguration();
@@ -69,9 +68,9 @@ class SCParserTest extends SimulationTest {
         });
 
         runSimpleSimulation(
-                GLOBAL_CONFIGURATION_FILE,
-                SIMULATION_MODEL_FILE,
-                SIMULATION_CONFIGURATION_FILE);
+                Utils.GLOBAL_CONFIGURATION_FILE,
+                Utils.SIMULATION_MODEL_FILE,
+                Utils.SIMULATION_CONFIGURATION_FILE);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package cost_driver;
+package de.tum.insm.scylla.plugin.sopa;
 
 import de.hpi.bpt.scylla.SimulationTest;
 import de.hpi.bpt.scylla.exception.ScyllaValidationException;
@@ -12,7 +12,6 @@ import java.io.InvalidClassException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static cost_driver.Utils.*;
 import static org.junit.jupiter.api.Assertions.fail;
 
 //@SuppressWarnings("unchecked")
@@ -24,9 +23,9 @@ class GCParserTest extends SimulationTest {
         PluginLoader.getDefaultPluginLoader().activateNone().loadPackage(Main.class.getPackageName());
 
         runSimpleSimulation(
-                GLOBAL_CONFIGURATION_FILE,
-                SIMULATION_MODEL_FILE,
-                SIMULATION_CONFIGURATION_FILE);
+                Utils.GLOBAL_CONFIGURATION_FILE,
+                Utils.SIMULATION_MODEL_FILE,
+                Utils.SIMULATION_CONFIGURATION_FILE);
 
         // Integrate the ACDs
         Object obj = getGlobalConfiguration().getExtensionAttributes().get("cost_driver_costDrivers");
@@ -34,7 +33,7 @@ class GCParserTest extends SimulationTest {
         if (obj instanceof ArrayList<?> list) {
             if (list.stream().allMatch(element -> element instanceof AbstractCostDriver)) {
                 List<AbstractCostDriver> abstractCostDriverList = (ArrayList<AbstractCostDriver>) list;
-                var expected = parseGC();
+                var expected = Utils.parseGC();
                 for (int i = 0; i < abstractCostDriverList.size(); i++) {
                     if (!abstractCostDriverList.get(i).equals(expected.get(i))) {
                         fail("\nWrongly parsed ACD: " +
