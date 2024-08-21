@@ -7,7 +7,7 @@
 
     <groupId>de.hpi.bpt</groupId>
     <artifactId>cost_driver</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>cost_driver</name>

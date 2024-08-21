@@ -12,13 +12,15 @@ import java.io.IOException;
 import java.util.*;
 
 import static cost_driver.Utils.*;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SCParserTest extends SimulationTest {
 
+    static CostVariantConfiguration expectedConfiguration = Utils.getDefaultCostVariantConfiguration();
+
     @Test
-    @DisplayName("Testing Parsing CostDriver List of String")
-    void testParsing_CD() throws IOException, ScyllaValidationException, JDOMException {
+    @DisplayName("Testing Parsing CostDrivers per Activity")
+    void testParsingActivityCostDrivers() throws IOException, ScyllaValidationException, JDOMException {
         PluginLoader.getDefaultPluginLoader().activateNone().loadPackage(Main.class.getPackageName());
 
         runSimpleSimulation(
@@ -26,91 +28,50 @@ class SCParserTest extends SimulationTest {
                 SIMULATION_MODEL_FILE,
                 SIMULATION_CONFIGURATION_FILE);
 
-        prepareSimulation();
-        HashMap<Integer, List<String>> costDriverMap = (HashMap<Integer, List<String>>) parseSC().get("costDrivers");
-        List<String> expectedCostDriverListString = costDriverMap.values()
-                .stream()
-                .flatMap(List::stream)
-                .toList();
+        //TODO insert proper fixture
+        Map<String, Integer>  identifiersToNodeIds = simulationManager.getProcessModels().get("Process_0vv8a1n").getIdentifiersToNodeIds();
+        var costDriverMapByElementId = Map.of(
+                identifiersToNodeIds.get("Activity_0e1w0fd"), List.of("Packaging Material", "Filling Material"),
+                identifiersToNodeIds.get("Activity_1s4kdkl"), List.of("Shipment"),
+                identifiersToNodeIds.get("Activity_0zhmejb"), List.of("Delivery"),
+                identifiersToNodeIds.get("Activity_192mexg"), List.of("Delivery"),
+                //identifiersToNodeIds.get("Activity_1gpudom"), List.of(),
+                identifiersToNodeIds.get("Activity_0rem6vo"), List.of("Receipt"),
+                identifiersToNodeIds.get("Activity_0y7dygl"), List.of("Re-Routing")
+        );
 
-        SimulationConfiguration simConfig = getSimulationConfiguration();
-        try {
-            HashMap<Integer, ArrayList<String>> actualCostDriverMap = (HashMap<Integer, ArrayList<String>>) simConfig.getExtensionAttributes().get("cost_driver_costDrivers");
 
-            List<String> actual = actualCostDriverMap.values()
-                    .stream()
-                    .flatMap(ArrayList::stream)
-                    .sorted()
-                    .toList();
+        HashMap<Integer, ArrayList<String>> actualCostDriverMap = (HashMap<Integer, ArrayList<String>>) getSimulationConfiguration().getExtensionAttributes().get("cost_driver_costDrivers");
 
-            List<String> expected = expectedCostDriverListString.stream()
-                    .sorted()
-                    .toList();
-
-            if (!actual.equals(expected)) {
-                int firstMismatchIndex = -1;
-                for (int i = 0; i < Math.min(actual.size(), expected.size()); i++) {
-                    if (!actual.get(i).equals(expected.get(i))) {
-                        firstMismatchIndex = i;
-                        break;
-                    }
-                }
-                if (firstMismatchIndex != -1) {
-                    fail("Mismatch found at index " + firstMismatchIndex +
-                            ". \n\t\tActual: " + actual.get(firstMismatchIndex) +
-                            ", \n\t\tExpected: " + expected.get(firstMismatchIndex));
-                } else {
-                    fail("Lists differ in size. " +
-                            "\n\tActual size: " + actual.size() +
-                            ", \t\tExpected size: " + expected.size());
-                }
-            }
-        } catch (Exception e) {
-            fail("Your simulation configuration extensionsAttributes is wrong.");
-        }
+        assertEquals(costDriverMapByElementId, actualCostDriverMap);
     }
 
     @Test
-    @DisplayName("Testing Parsing Configuration")
-    void testParsing_CV() throws IOException {
-        prepareSimulation();
-        var seed = CURRENT_GLOBAL_CONFIGURATION.getRandomSeed();
-
+    @DisplayName("Testing Parsing Variants")
+    void testParsingVariants() throws IOException, ScyllaValidationException, JDOMException {
         PluginLoader.getDefaultPluginLoader().activateNone().loadPackage(Main.class.getPackageName());
 
-        setGlobalSeed(seed);
+        setGlobalSeed(DEFAULT_SEED);
+
+        afterParsing(() -> { //Needs to be run directly after parsing, as stack of calculated variants is consumed during simulation
+            SimulationConfiguration actualSimConfig = getSimulationConfiguration();
+            CostVariantConfiguration actualConfiguration = (CostVariantConfiguration) actualSimConfig.
+                    getExtensionAttributes().get("cost_driver_CostVariant");
+
+
+
+            Stack<CostVariant> actualConfiguredVariants = actualConfiguration.getCostVariantListConfigured();
+            Stack<CostVariant> expectedConfiguredVariants = expectedConfiguration.getCostVariantListConfigured();
+            assertEquals(expectedConfiguredVariants.size(), actualConfiguredVariants.size(), "Configured amount of variants is not as expected");
+            for (int k = 0; k < actualConfiguredVariants.size(); k++) {
+                assertEquals(expectedConfiguredVariants.get(k).getConcretisedACD(), actualConfiguredVariants.get(k).getConcretisedACD());
+            }
+        });
+
         runSimpleSimulation(
                 GLOBAL_CONFIGURATION_FILE,
                 SIMULATION_MODEL_FILE,
                 SIMULATION_CONFIGURATION_FILE);
-
-
-        SimulationConfiguration actualSimConfig = getSimulationConfiguration();
-        try {
-            CostVariantConfiguration actualConfiguration = (CostVariantConfiguration) actualSimConfig.
-                    getExtensionAttributes().get("cost_driver_CostVariant");
-
-            CostVariantConfiguration expectedConfiguration = (CostVariantConfiguration) Objects.requireNonNull(
-                    parseSC()
-            ).get("CostVariant");
-
-            Stack<CostVariant> i = actualConfiguration.getCostVariantListConfigured();
-            var j = expectedConfiguration.getCostVariantListConfigured();
-            for (int k = 0; k < i.size(); k++) {
-                List<String> actualACDList = i.get(k).getConcretisedACD().keySet().stream().toList();
-                List<Double> actualCostList = i.get(k).getConcretisedACD().values().stream().toList();
-                List<String> expectedACDList = j.get(k).getConcretisedACD().keySet().stream().toList();
-                List<Double> expectedCostList = j.get(k).getConcretisedACD().values().stream().toList();
-                if (!(actualACDList.equals(expectedACDList) && actualCostList.equals(expectedCostList))) {
-                    fail("Your configured cost variants do not match the provided simulation configuration. " +
-                            "\n\tActual: " + j.get(k).getId() + "\n" + actualACDList + "\n" + actualCostList +
-                            "\n\tExpected: " + j.get(k).getId() + "\n" + expectedACDList + "\n" + expectedCostList);
-                }
-            }
-        } catch (Exception e) {
-
-            fail("");
-        }
     }
 
     @Override

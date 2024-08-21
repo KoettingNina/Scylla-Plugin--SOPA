@@ -3,36 +3,36 @@
   <bsim:simulationConfiguration id="logistics_sim" startDateTime="2023-12-25T09:00+01:00" processRef="Process_0vv8a1n" processInstances="10">
     <bsim:costVariantConfig>
       <bsim:variant id="Shipment and delivery over distance A" frequency="0.2">
-        <bsim:driver id="Delivery" cost="0.00002843" />
-        <bsim:driver id="Filling Material" cost="0.00001468" />
-        <bsim:driver id="Packaging Material" cost="0.00003806" />
-        <bsim:driver id="Re-Routing" cost="0.000008529" />
-        <bsim:driver id="Receipt" cost="0.00001153" />
-        <bsim:driver id="Shipment" cost="0.00007839" />
+        <bsim:driver abstractId="Delivery" concreteId="Delivery_A_Lorry" />
+        <bsim:driver abstractId="Filling Material" concreteId="Filling_A" />
+        <bsim:driver abstractId="Packaging Material" concreteId="Packaging_Material_B" />
+        <bsim:driver abstractId="Re-Routing" concreteId="Re-Routing_A_Lorry" />
+        <bsim:driver abstractId="Receipt" concreteId="Receipt" />
+        <bsim:driver abstractId="Shipment" concreteId="Shipment_A_Lorry" />
       </bsim:variant>
       <bsim:variant id="Shipment and delivery over distance A_Electric" frequency="0.05">
-        <bsim:driver id="Delivery" cost="0.00002843" />
-        <bsim:driver id="Filling Material" cost="0.00001468" />
-        <bsim:driver id="Packaging Material" cost="0.00003806" />
-        <bsim:driver id="Re-Routing" cost="0.000008529" />
-        <bsim:driver id="Receipt" cost="0.00001153" />
-        <bsim:driver id="Shipment" cost="0.0000000253" />
+        <bsim:driver abstractId="Delivery" concreteId="Delivery_A_Lorry" />
+        <bsim:driver abstractId="Filling Material" concreteId="Filling_A" />
+        <bsim:driver abstractId="Packaging Material" concreteId="Packaging_Material_B" />
+        <bsim:driver abstractId="Re-Routing" concreteId="Re-Routing_A_Lorry" />
+        <bsim:driver abstractId="Receipt" concreteId="Receipt" />
+        <bsim:driver abstractId="Shipment" concreteId="Shipment_A_Rail_Electric" />
       </bsim:variant>
       <bsim:variant id="Shipment and delivery over distance B" frequency="0.5">
-        <bsim:driver id="Delivery" cost="0.00004265" />
-        <bsim:driver id="Filling Material" cost="0.00001468" />
-        <bsim:driver id="Packaging Material" cost="0.00003806" />
-        <bsim:driver id="Re-Routing" cost="0.000008529" />
-        <bsim:driver id="Receipt" cost="0.00001153" />
-        <bsim:driver id="Shipment" cost="0.00007839" />
+        <bsim:driver abstractId="Delivery" concreteId="Delivery_B_Lorry" />
+        <bsim:driver abstractId="Filling Material" concreteId="Filling_A" />
+        <bsim:driver abstractId="Packaging Material" concreteId="Packaging_Material_B" />
+        <bsim:driver abstractId="Re-Routing" concreteId="Re-Routing_A_Lorry" />
+        <bsim:driver abstractId="Receipt" concreteId="Receipt" />
+        <bsim:driver abstractId="Shipment" concreteId="Shipment_A_Lorry" />
       </bsim:variant>
       <bsim:variant id="Shipment and delivery over distance B" frequency="0.25">
-        <bsim:driver id="Delivery" cost="0.00004265" />
-        <bsim:driver id="Filling Material" cost="0.00001468" />
-        <bsim:driver id="Packaging Material" cost="0.00003806" />
-        <bsim:driver id="Re-Routing" cost="0.000008529" />
-        <bsim:driver id="Receipt" cost="0.00001153" />
-        <bsim:driver id="Shipment" cost="0.0000000506" />
+        <bsim:driver abstractId="Delivery" concreteId="Delivery_B_Lorry" />
+        <bsim:driver abstractId="Filling Material" concreteId="Filling_A" />
+        <bsim:driver abstractId="Packaging Material" concreteId="Packaging_Material_B" />
+        <bsim:driver abstractId="Re-Routing" concreteId="Re-Routing_A_Lorry" />
+        <bsim:driver abstractId="Receipt" concreteId="Receipt" />
+        <bsim:driver abstractId="Shipment" concreteId="Shipment_B_Rail_Electric" />
       </bsim:variant>
     </bsim:costVariantConfig>
     <bsim:startEvent id="StartEvent_0gkkt3f" name="Product received">

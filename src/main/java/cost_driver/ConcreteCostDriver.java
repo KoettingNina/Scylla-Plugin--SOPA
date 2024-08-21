@@ -1,7 +1,6 @@
 package cost_driver;
 
 import de.hpi.bpt.scylla.exception.ScyllaValidationException;
-import de.hpi.bpt.scylla.model.configuration.distribution.TimeDistributionWrapper;
 import org.springframework.lang.NonNull;
 
 public class ConcreteCostDriver extends CostDriver {

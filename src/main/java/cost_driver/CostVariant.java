@@ -11,9 +11,9 @@ public class CostVariant {
     @NonNull
     protected Double frequency;
     @NonNull
-    protected Map<String, Double> concretisedACD;
+    protected Map<String, String> concretisedACD;
 
-    public CostVariant(@NonNull String id, @NonNull Double frequency, @NonNull Map<String, Double> concretisedACD) {
+    public CostVariant(@NonNull String id, @NonNull Double frequency, @NonNull Map<String, String> concretisedACD) {
         this.concretisedACD = concretisedACD;
         this.frequency = frequency;
         this.id = id;
@@ -27,11 +27,8 @@ public class CostVariant {
         return frequency;
     }
 
-    public Map<String, Double> getConcretisedACD() {
+    public Map<String, String> getConcretisedACD() {
         return concretisedACD;
     }
 
-    public Double getSum() {
-        return concretisedACD.values().stream().mapToDouble(i -> i).sum();
-    }
 }

@@ -36,13 +36,13 @@ public class CostDriverSCParserPlugin extends SimulationConfigurationParserPlugg
             Double frequency = Double.valueOf(variant.getAttributeValue("frequency"));
             frequencyCount += frequency;
 
-            Map<String, Double> concretisedACD = new HashMap<>();
+            Map<String, String> concretisedACD = new HashMap<>();
 
             for (Element driver : variant.getChildren()) {
-                String CID = driver.getAttributeValue("id");
-                Double cost = Double.valueOf(driver.getAttributeValue("cost"));
+                String abstractId = driver.getAttributeValue("abstractId");
+                String concreteId = driver.getAttributeValue("concreteId");
 
-                concretisedACD.put(CID, cost);
+                concretisedACD.put(abstractId, concreteId);
             }
 
             CostVariant costVariant = new CostVariant(id, frequency, concretisedACD);

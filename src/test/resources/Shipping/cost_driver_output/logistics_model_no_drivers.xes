@@ -1056,7 +1056,7 @@
 	</trace>
 	<trace>
 		<string key="concept:name" value="6"/>
-		<string key="cost:Process_Instance" value="1.581243E-4"/>
+		<string key="cost:Process_Instance" value="1.5814960000000002E-4"/>
 		<string key="cost:variant" value="Shipment and delivery over distance B"/>
 		<event>
 			<string key="concept:name" value="Product received"/>
@@ -1085,20 +1085,20 @@
 			<string key="cost:activity" value="5.274E-5"/>
 		</event>
 		<event>
-			<string key="cost:driver" value="Shipment(Shipment_A_Rail_Electric): 2.53E-8"/>
+			<string key="cost:driver" value="Shipment(Shipment_B_Rail_Electric): 5.06E-8"/>
 			<string key="org:resource" value="courier_#1"/>
 			<string key="concept:name" value="Ship product"/>
 			<string key="lifecycle:transition" value="start"/>
 			<date key="time:timestamp" value="2023-12-25T14:19:03+01:00"/>
-			<string key="cost:activity" value="2.53E-8"/>
+			<string key="cost:activity" value="5.06E-8"/>
 		</event>
 		<event>
-			<string key="cost:driver" value="Shipment(Shipment_A_Rail_Electric): 2.53E-8"/>
+			<string key="cost:driver" value="Shipment(Shipment_B_Rail_Electric): 5.06E-8"/>
 			<string key="org:resource" value="courier_#1"/>
 			<string key="concept:name" value="Ship product"/>
 			<string key="lifecycle:transition" value="complete"/>
 			<date key="time:timestamp" value="2023-12-25T14:47:51+01:00"/>
-			<string key="cost:activity" value="2.53E-8"/>
+			<string key="cost:activity" value="5.06E-8"/>
 		</event>
 		<event>
 			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
@@ -1261,7 +1261,7 @@
 	</trace>
 	<trace>
 		<string key="concept:name" value="7"/>
-		<string key="cost:Process_Instance" value="1.581243E-4"/>
+		<string key="cost:Process_Instance" value="1.5814960000000002E-4"/>
 		<string key="cost:variant" value="Shipment and delivery over distance B"/>
 		<event>
 			<string key="concept:name" value="Product received"/>
@@ -1290,20 +1290,20 @@
 			<string key="cost:activity" value="5.274E-5"/>
 		</event>
 		<event>
-			<string key="cost:driver" value="Shipment(Shipment_A_Rail_Electric): 2.53E-8"/>
+			<string key="cost:driver" value="Shipment(Shipment_B_Rail_Electric): 5.06E-8"/>
 			<string key="org:resource" value="courier_#1"/>
 			<string key="concept:name" value="Ship product"/>
 			<string key="lifecycle:transition" value="start"/>
 			<date key="time:timestamp" value="2023-12-25T14:47:51+01:00"/>
-			<string key="cost:activity" value="2.53E-8"/>
+			<string key="cost:activity" value="5.06E-8"/>
 		</event>
 		<event>
-			<string key="cost:driver" value="Shipment(Shipment_A_Rail_Electric): 2.53E-8"/>
+			<string key="cost:driver" value="Shipment(Shipment_B_Rail_Electric): 5.06E-8"/>
 			<string key="org:resource" value="courier_#1"/>
 			<string key="concept:name" value="Ship product"/>
 			<string key="lifecycle:transition" value="complete"/>
 			<date key="time:timestamp" value="2023-12-25T14:47:51+01:00"/>
-			<string key="cost:activity" value="2.53E-8"/>
+			<string key="cost:activity" value="5.06E-8"/>
 		</event>
 		<event>
 			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
@@ -1876,7 +1876,7 @@
 	</trace>
 	<trace>
 		<string key="concept:name" value="10"/>
-		<string key="cost:Process_Instance" value="1.581243E-4"/>
+		<string key="cost:Process_Instance" value="1.5814960000000002E-4"/>
 		<string key="cost:variant" value="Shipment and delivery over distance B"/>
 		<event>
 			<string key="concept:name" value="Product received"/>
@@ -1905,20 +1905,20 @@
 			<string key="cost:activity" value="5.274E-5"/>
 		</event>
 		<event>
-			<string key="cost:driver" value="Shipment(Shipment_A_Rail_Electric): 2.53E-8"/>
+			<string key="cost:driver" value="Shipment(Shipment_B_Rail_Electric): 5.06E-8"/>
 			<string key="org:resource" value="courier_#1"/>
 			<string key="concept:name" value="Ship product"/>
 			<string key="lifecycle:transition" value="start"/>
 			<date key="time:timestamp" value="2023-12-25T15:37:56+01:00"/>
-			<string key="cost:activity" value="2.53E-8"/>
+			<string key="cost:activity" value="5.06E-8"/>
 		</event>
 		<event>
-			<string key="cost:driver" value="Shipment(Shipment_A_Rail_Electric): 2.53E-8"/>
+			<string key="cost:driver" value="Shipment(Shipment_B_Rail_Electric): 5.06E-8"/>
 			<string key="org:resource" value="courier_#1"/>
 			<string key="concept:name" value="Ship product"/>
 			<string key="lifecycle:transition" value="complete"/>
 			<date key="time:timestamp" value="2023-12-25T15:58:56+01:00"/>
-			<string key="cost:activity" value="2.53E-8"/>
+			<string key="cost:activity" value="5.06E-8"/>
 		</event>
 		<event>
 			<string key="org:resource" value="courier_#0"/>

@@ -38,13 +38,12 @@ public class CostVariantConfiguration {
 
         this.costVariantListConfigured = new Stack<>();
         this.costVariantList.forEach(costVariant ->
-                IntStream.range(0, (int) Math.round(costVariant.frequency * count))
+                IntStream.range(0, (int) Math.round(costVariant.getFrequency() * count))
                         .forEach(i -> costVariantListConfigured.push(costVariant))
         );
 
         Collections.shuffle(costVariantListConfigured, new Random(seed));
         // For debugging purpose
-//        System.out.println("Size of configured cost variant list: " + costVariantListConfigured.size());
     }
 
     public Integer getCount() {
