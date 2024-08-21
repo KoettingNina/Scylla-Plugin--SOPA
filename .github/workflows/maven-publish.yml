@@ -36,7 +36,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   Release:
-    if: github.repository == 'INSM-TUM-Teaching/Simulator-Extension-SOPA'  # Only main repo has permissions to publish this
+    if: github.repository == 'INSM-TUM/Scylla-Plugin--SOPA'  # Only main repo has permissions to publish this
 
     runs-on: ubuntu-latest
     permissions:
@@ -80,47 +80,25 @@ jobs:
         uses: coactions/setup-xvfb@v1
         with:
           run: mvn -B package --file pom.xml
-
-      - name: Create .zip
-        run: |
-          cd ./target/
-          mv ./*.jar ./cost_driver.jar
-          zip -r ../cost_driver.zip ./*.jar
-          cd ..
-          echo "RELEASE_VERSION=$(cat pom.xml | grep '<version>' | head -1 | sed 's/<version>//' | sed 's/<\/version>//')" >> $GITHUB_ENV
-
-      - name: Upload Zip
-        uses: ncipollo/release-action@v1.12.0
-        with:
-          artifacts: "cost_driver.zip"
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{env.RELEASE_VERSION}}
-          commit: 'main'
-          allowUpdates: true
-
-  Deploy:
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/') && github.repository == 'INSM-TUM-Teaching/cost_driver'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-          settings-path: ${{ github.workspace }} # location for the settings.xml file
-          cache: maven
-
+          
       - name: Publish as Maven package to GitHub Packages Apache Maven
         run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -DskipTests
         env:
           GITHUB_TOKEN: ${{ github.token }}
-
+          
       - name: Set Release version env variable
         run: |
           echo "RELEASE_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
+          
+      - name: Prepare Jarfile
+        run: |
+          mv ./target/*.jar ./scylla-plugin--sopa.jar
+            
+      - name: Upload Jarfile
+        uses: ncipollo/release-action@v1.12.0
+        with:
+          artifacts: "scylla-plugin--sopa.jar"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{env.RELEASE_VERSION}}
+          commit: 'main'
+          allowUpdates: true
