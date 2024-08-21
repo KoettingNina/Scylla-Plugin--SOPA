@@ -1,0 +1,25 @@
+/target/
+
+# Ignore output of scylla
+*_resourceutilization.txt
+*.xes
+*.*_batchactivitystats.txt
+*.xml
+
+# Compiled class file
+*.class
+
+# Package Files #
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+**/output_*/*
+/.idea/*
+/target/
+/samples/*.html
+/.settings/
+/.project
+**/*.iml

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bsim:globalConfiguration xmlns:bsim="http://bsim.hpi.uni-potsdam.de/scylla/simModel" targetNamespace="http://www.hpi.de" id="logistics_global">
+  <bsim:zoneOffset>+01:00</bsim:zoneOffset>
+  <bsim:timetables>
+    <bsim:timetable id="Standard">
+      <bsim:timetableItem from="MONDAY" to="MONDAY" beginTime="09:00" endTime="17:00" />
+      <bsim:timetableItem from="TUESDAY" to="TUESDAY" beginTime="09:00" endTime="17:00" />
+      <bsim:timetableItem from="WEDNESDAY" to="WEDNESDAY" beginTime="09:00" endTime="17:00" />
+      <bsim:timetableItem from="THURSDAY" to="THURSDAY" beginTime="09:00" endTime="17:00" />
+      <bsim:timetableItem from="FRIDAY" to="FRIDAY" beginTime="09:00" endTime="17:00" />
+    </bsim:timetable>
+  </bsim:timetables>
+  <bsim:resourceData>
+    <bsim:dynamicResource id="courier" defaultQuantity="4" defaultCost="10.0" defaultTimetableId="Standard" defaultTimeUnit="HOURS" />
+  </bsim:resourceData>
+  <bsim:costDriver>
+    <bsim:abstractCostDriver id="Delivery">
+      <bsim:concreteCostDeiver id="Delivery_B_Small_Lorry" cost="0.00005524"/>
+      <bsim:concreteCostDeiver id="Delivery_A_Small_Lorry" cost="0.00003683"/>
+      <bsim:concreteCostDeiver id="Delivery_A_Lorry" cost="0.00002843"/>
+      <bsim:concreteCostDeiver id="Delivery_B_Lorry" cost="0.00004265"/>
+    </bsim:abstractCostDriver>
+    <bsim:abstractCostDriver id="Filling Material">
+      <bsim:concreteCostDeiver id="Filling_A" cost="0.00001468"/>
+    </bsim:abstractCostDriver>
+    <bsim:abstractCostDriver id="Packaging Material">
+      <bsim:concreteCostDeiver id="Packaging_Material_A" cost="0.00007611"/>
+      <bsim:concreteCostDeiver id="Packaging_Material_B" cost="0.00003806"/>
+    </bsim:abstractCostDriver>
+    <bsim:abstractCostDriver id="Re-Routing">
+      <bsim:concreteCostDeiver id="Re-Routing_A_Lorry" cost="0.000008529"/>
+      <bsim:concreteCostDeiver id="Re-Routing_A_Small_Lorry" cost="0.00001105"/>
+    </bsim:abstractCostDriver>
+    <bsim:abstractCostDriver id="Receipt">
+      <bsim:concreteCostDeiver id="Receipt" cost="0.00001153"/>
+    </bsim:abstractCostDriver>
+    <bsim:abstractCostDriver id="Shipment">
+      <bsim:concreteCostDeiver id="Shipment_A_Lorry" cost="0.00007839"/>
+      <bsim:concreteCostDeiver id="Shipment_A_Rail_Electric" cost="0.0000000253"/>
+      <bsim:concreteCostDeiver id="Shipment_B_Lorry" cost="0.0001568"/>
+      <bsim:concreteCostDeiver id="Shipment_B_Rail_Electric" cost="0.0000000506"/>
+    </bsim:abstractCostDriver>
+  </bsim:costDriver>
+</bsim:globalConfiguration>

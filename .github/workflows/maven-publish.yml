@@ -1,0 +1,126 @@
+# This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
+# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
+
+name: Maven Package
+
+on:
+  release:
+    types: [ created ]
+  push:
+    branches: [ main ]
+
+jobs:
+  pat:
+    name: Test PAT
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: yarn install
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+
+  triage:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/labeler@v4
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+  Release:
+    if: github.repository == 'INSM-TUM-Teaching/Simulator-Extension-SOPA'  # Only main repo has permissions to publish this
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
+          settings-path: ${{ github.workspace }} # location for the settings.xml file
+          cache: maven
+
+      - name: Download and Unpack Scylla
+        run: |
+          # Define variables for URLs and target directory
+          SCYLLA_URL="https://github.com/bptlab/scylla/releases/download/0.0.1-SNAPSHOT/scylla.zip"
+          TARGET_DIR="${{ github.workspace }}/lib"
+          
+          # Create the target directory if it doesn't exist
+          mkdir -p $TARGET_DIR
+          
+          # Download the zip file
+          wget $SCYLLA_URL -O scylla.zip
+          
+          # Unpack the zip file
+          unzip scylla.zip
+          
+          # Move the JAR files to the target directory
+          mv scylla.jar $TARGET_DIR
+          mv scylla-tests.jar $TARGET_DIR
+
+      - name: Setup dependencies
+        run: mvn -B clean --file pom.xml
+
+      - name: Build with Maven
+        uses: coactions/setup-xvfb@v1
+        with:
+          run: mvn -B package --file pom.xml
+
+      - name: Create .zip
+        run: |
+          cd ./target/
+          mv ./*.jar ./cost_driver.jar
+          zip -r ../cost_driver.zip ./*.jar
+          cd ..
+          echo "RELEASE_VERSION=$(cat pom.xml | grep '<version>' | head -1 | sed 's/<version>//' | sed 's/<\/version>//')" >> $GITHUB_ENV
+
+      - name: Upload Zip
+        uses: ncipollo/release-action@v1.12.0
+        with:
+          artifacts: "cost_driver.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{env.RELEASE_VERSION}}
+          commit: 'main'
+          allowUpdates: true
+
+  Deploy:
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/') && github.repository == 'INSM-TUM-Teaching/cost_driver'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
+          settings-path: ${{ github.workspace }} # location for the settings.xml file
+          cache: maven
+
+      - name: Publish as Maven package to GitHub Packages Apache Maven
+        run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -DskipTests
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Set Release version env variable
+        run: |
+          echo "RELEASE_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Sustainability_Info>
+    <Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_B">2.0290412857142858E-4</Average_Cost_Variant_Cost>
+    <Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A">2.08049E-4</Average_Cost_Variant_Cost>
+    <Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A_Electric">1.2968430000000002E-4</Average_Cost_Variant_Cost>
+    <Average_Process_Instance_Cost>1.9661112E-4</Average_Process_Instance_Cost>
+    <Activity_Cost>
+        <Activity id="Print_and_post_pick-up_receipt">
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_B">1.1530000000000001E-5</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A">1.153E-5</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A_Electric">1.153E-5</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost id="Print_and_post_pick-up_receipt">1.153E-5</Activity_Average_Cost>
+        </Activity>
+        <Activity id="Product_received">
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_B">0.0</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A">0.0</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A_Electric">0.0</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost id="Product_received">0.0</Activity_Average_Cost>
+        </Activity>
+        <Activity id="Deliver_to_Door">
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_B">4.265E-5</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A">2.843E-5</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A_Electric">2.843E-5</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost id="Deliver_to_Door">3.8384E-5</Activity_Average_Cost>
+        </Activity>
+        <Activity id="Package_product">
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_B">5.274E-5</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A">5.274E-5</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A_Electric">5.274E-5</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost id="Package_product">5.274E-5</Activity_Average_Cost>
+        </Activity>
+        <Activity id="Product_delivered_sucessfully">
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_B">0.0</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A">0.0</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A_Electric">0.0</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost id="Product_delivered_sucessfully">0.0</Activity_Average_Cost>
+        </Activity>
+        <Activity id="Deliver_to_Packstation">
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_B">4.265E-5</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A">2.843E-5</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A_Electric">2.843E-5</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost id="Deliver_to_Packstation">3.8384E-5</Activity_Average_Cost>
+        </Activity>
+        <Activity id="Product_returned">
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_B">0.0</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A">0.0</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A_Electric">0.0</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost id="Product_returned">0.0</Activity_Average_Cost>
+        </Activity>
+        <Activity id="Re-route_to_Packstation">
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_B">8.529E-6</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A">8.529E-6</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A_Electric">8.529E-6</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost id="Re-route_to_Packstation">8.529E-6</Activity_Average_Cost>
+        </Activity>
+        <Activity id="Ship_product">
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_B">4.480512857142858E-5</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A">7.839E-5</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A_Electric">2.53E-8</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost id="Ship_product">4.704412E-5</Activity_Average_Cost>
+        </Activity>
+        <Activity id="Return_product">
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_B">0.0</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A">0.0</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost_Variant_Cost id="Shipment_and_delivery_over_distance_A_Electric">0.0</Activity_Average_Cost_Variant_Cost>
+            <Activity_Average_Cost id="Return_product">0.0</Activity_Average_Cost>
+        </Activity>
+    </Activity_Cost>
+    <Activity_Instance_Cost>
+        <Activity ACD="Receipt" id="Print_and_post_pick-up_receipt">
+            <Cost_Variant CCD="Receipt" id="Shipment_and_delivery_over_distance_B">
+                <activity_instance_cost ProcessInstance_IDs="2, 4, 6, 7, 8, 9, 10" count="7">1.153E-5</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant CCD="Receipt" id="Shipment_and_delivery_over_distance_A">
+                <activity_instance_cost ProcessInstance_IDs="1, 5" count="2">1.153E-5</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant CCD="Receipt" id="Shipment_and_delivery_over_distance_A_Electric">
+                <activity_instance_cost ProcessInstance_IDs="3" count="1">1.153E-5</activity_instance_cost>
+            </Cost_Variant>
+        </Activity>
+        <Activity id="Product_received">
+            <Cost_Variant id="Shipment_and_delivery_over_distance_B">
+                <activity_instance_cost ProcessInstance_IDs="2, 4, 6, 7, 8, 9, 10" count="7">0.0</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant id="Shipment_and_delivery_over_distance_A">
+                <activity_instance_cost ProcessInstance_IDs="1, 5" count="2">0.0</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant id="Shipment_and_delivery_over_distance_A_Electric">
+                <activity_instance_cost ProcessInstance_IDs="3" count="1">0.0</activity_instance_cost>
+            </Cost_Variant>
+        </Activity>
+        <Activity ACD="Delivery" id="Deliver_to_Door">
+            <Cost_Variant CCD="Delivery_B_Lorry" id="Shipment_and_delivery_over_distance_B">
+                <activity_instance_cost ProcessInstance_IDs="2, 4, 6, 7, 8, 9, 10" count="7">4.265E-5</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant CCD="Delivery_A_Lorry" id="Shipment_and_delivery_over_distance_A">
+                <activity_instance_cost ProcessInstance_IDs="1, 5" count="2">2.843E-5</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant CCD="Delivery_A_Lorry" id="Shipment_and_delivery_over_distance_A_Electric">
+                <activity_instance_cost ProcessInstance_IDs="3" count="1">2.843E-5</activity_instance_cost>
+            </Cost_Variant>
+        </Activity>
+        <Activity ACD="Packaging Material, Filling Material" id="Package_product">
+            <Cost_Variant CCD="Packaging_Material_B, Filling_A" id="Shipment_and_delivery_over_distance_B">
+                <activity_instance_cost ProcessInstance_IDs="2, 4, 6, 7, 8, 9, 10" count="7">5.274E-5</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant CCD="Packaging_Material_B, Filling_A" id="Shipment_and_delivery_over_distance_A">
+                <activity_instance_cost ProcessInstance_IDs="1, 5" count="2">5.274E-5</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant CCD="Packaging_Material_B, Filling_A" id="Shipment_and_delivery_over_distance_A_Electric">
+                <activity_instance_cost ProcessInstance_IDs="3" count="1">5.274E-5</activity_instance_cost>
+            </Cost_Variant>
+        </Activity>
+        <Activity id="Product_delivered_sucessfully">
+            <Cost_Variant id="Shipment_and_delivery_over_distance_B">
+                <activity_instance_cost ProcessInstance_IDs="2, 4, 6, 7, 8, 9, 10" count="21">0.0</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant id="Shipment_and_delivery_over_distance_A">
+                <activity_instance_cost ProcessInstance_IDs="1, 5" count="6">0.0</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant id="Shipment_and_delivery_over_distance_A_Electric">
+                <activity_instance_cost ProcessInstance_IDs="3" count="3">0.0</activity_instance_cost>
+            </Cost_Variant>
+        </Activity>
+        <Activity ACD="Delivery" id="Deliver_to_Packstation">
+            <Cost_Variant CCD="Delivery_B_Lorry" id="Shipment_and_delivery_over_distance_B">
+                <activity_instance_cost ProcessInstance_IDs="2, 4, 6, 7, 8, 9, 10" count="7">4.265E-5</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant CCD="Delivery_A_Lorry" id="Shipment_and_delivery_over_distance_A">
+                <activity_instance_cost ProcessInstance_IDs="1, 5" count="2">2.843E-5</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant CCD="Delivery_A_Lorry" id="Shipment_and_delivery_over_distance_A_Electric">
+                <activity_instance_cost ProcessInstance_IDs="3" count="1">2.843E-5</activity_instance_cost>
+            </Cost_Variant>
+        </Activity>
+        <Activity id="Product_returned">
+            <Cost_Variant id="Shipment_and_delivery_over_distance_B">
+                <activity_instance_cost ProcessInstance_IDs="2, 4, 6, 7, 8, 9, 10" count="21">0.0</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant id="Shipment_and_delivery_over_distance_A">
+                <activity_instance_cost ProcessInstance_IDs="1, 5" count="6">0.0</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant id="Shipment_and_delivery_over_distance_A_Electric">
+                <activity_instance_cost ProcessInstance_IDs="3" count="3">0.0</activity_instance_cost>
+            </Cost_Variant>
+        </Activity>
+        <Activity ACD="Re-Routing" id="Re-route_to_Packstation">
+            <Cost_Variant CCD="Re-Routing_A_Lorry" id="Shipment_and_delivery_over_distance_B">
+                <activity_instance_cost ProcessInstance_IDs="2, 4, 6, 7, 8, 9, 10" count="7">8.529E-6</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant CCD="Re-Routing_A_Lorry" id="Shipment_and_delivery_over_distance_A">
+                <activity_instance_cost ProcessInstance_IDs="1, 5" count="2">8.529E-6</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant CCD="Re-Routing_A_Lorry" id="Shipment_and_delivery_over_distance_A_Electric">
+                <activity_instance_cost ProcessInstance_IDs="3" count="1">8.529E-6</activity_instance_cost>
+            </Cost_Variant>
+        </Activity>
+        <Activity ACD="Shipment" id="Ship_product">
+            <Cost_Variant CCD="Shipment_A_Lorry" id="Shipment_and_delivery_over_distance_B">
+                <activity_instance_cost ProcessInstance_IDs="2, 4, 6, 7, 8, 9, 10" count="7">7.839E-5</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant CCD="Shipment_A_Lorry" id="Shipment_and_delivery_over_distance_A">
+                <activity_instance_cost ProcessInstance_IDs="1, 5" count="2">7.839E-5</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant CCD="Shipment_A_Rail_Electric" id="Shipment_and_delivery_over_distance_A_Electric">
+                <activity_instance_cost ProcessInstance_IDs="3" count="1">2.53E-8</activity_instance_cost>
+            </Cost_Variant>
+        </Activity>
+        <Activity id="Return_product">
+            <Cost_Variant id="Shipment_and_delivery_over_distance_B">
+                <activity_instance_cost ProcessInstance_IDs="2, 4, 6, 7, 8, 9, 10" count="21">0.0</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant id="Shipment_and_delivery_over_distance_A">
+                <activity_instance_cost ProcessInstance_IDs="1, 5" count="6">0.0</activity_instance_cost>
+            </Cost_Variant>
+            <Cost_Variant id="Shipment_and_delivery_over_distance_A_Electric">
+                <activity_instance_cost ProcessInstance_IDs="3" count="3">0.0</activity_instance_cost>
+            </Cost_Variant>
+        </Activity>
+    </Activity_Instance_Cost>
+</Sustainability_Info>

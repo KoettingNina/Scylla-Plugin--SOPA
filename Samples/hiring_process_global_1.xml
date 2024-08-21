@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bsim:globalConfiguration xmlns:bsim="http://bsim.hpi.uni-potsdam.de/scylla/simModel" targetNamespace="http://www.hpi.de" id="hiring_process_global">
+  <bsim:zoneOffset>+01:00</bsim:zoneOffset>
+  <bsim:timetables>
+    <bsim:timetable id="Standard">
+      <bsim:timetableItem from="MONDAY" to="MONDAY" beginTime="09:00" endTime="17:00" />
+      <bsim:timetableItem from="TUESDAY" to="TUESDAY" beginTime="09:00" endTime="17:00" />
+      <bsim:timetableItem from="WEDNESDAY" to="WEDNESDAY" beginTime="09:00" endTime="17:00" />
+      <bsim:timetableItem from="THURSDAY" to="THURSDAY" beginTime="09:00" endTime="17:00" />
+      <bsim:timetableItem from="FRIDAY" to="FRIDAY" beginTime="09:00" endTime="17:00" />
+    </bsim:timetable>
+  </bsim:timetables>
+  <bsim:resourceData>
+    <bsim:dynamicResource id="Department" defaultQuantity="2" defaultCost="10.0" defaultTimetableId="Standard" defaultTimeUnit="HOURS" />
+    <bsim:dynamicResource id="Faculty" defaultQuantity="1" defaultCost="30.0" defaultTimetableId="Standard" defaultTimeUnit="HOURS" />
+    <bsim:dynamicResource id="Women's representative" defaultQuantity="1" defaultCost="40.0" defaultTimetableId="Standard" defaultTimeUnit="HOURS" />
+    <bsim:dynamicResource id="Diversity officer" defaultQuantity="1" defaultCost="30.0" defaultTimetableId="Standard" defaultTimeUnit="HOURS" />
+    <bsim:dynamicResource id="Human Resources" defaultQuantity="5" defaultCost="50.0" defaultTimetableId="Standard" defaultTimeUnit="HOURS" />
+    <bsim:dynamicResource id="Staff council" defaultQuantity="3" defaultCost="10.0" defaultTimetableId="Standard" defaultTimeUnit="HOURS" />
+  </bsim:resourceData>
+  <bsim:costDriver>
+    <bsim:abstractCostDriver id="Request for job advertisement" defaultTimeUnit="Hours">
+      <bsim:concreteCostDriver id="paper" LCAScores="0.0000289">
+        <bsim:probability>0.9</bsim:probability>
+      </bsim:concreteCostDriver>
+      <bsim:concreteCostDriver id="digital" LCAScores="0.0000195">
+        <bsim:probability>0.1</bsim:probability>
+      </bsim:concreteCostDriver>
+    </bsim:abstractCostDriver>
+    <bsim:abstractCostDriver id="In-house mail" defaultTimeUnit="Hours">
+      <bsim:concreteCostDriver id="car" LCAScores="0.0000391">
+        <bsim:probability>0.3</bsim:probability>
+      </bsim:concreteCostDriver>
+      <bsim:concreteCostDriver id="electronic bicycle" LCAScores="0.00000422">
+        <bsim:probability>0.4</bsim:probability>
+      </bsim:concreteCostDriver>
+      <bsim:concreteCostDriver id="digital" LCAScores="0.0000000195">
+        <bsim:probability>0.3</bsim:probability>
+      </bsim:concreteCostDriver>
+    </bsim:abstractCostDriver>
+    <bsim:abstractCostDriver id="Advertisement" defaultTimeUnit="Hours">
+      <bsim:concreteCostDriver id="paper" LCAScores="0.0000219">
+        <bsim:probability>0.6</bsim:probability>
+      </bsim:concreteCostDriver>
+      <bsim:concreteCostDriver id="digital" LCAScores="0.0000195">
+        <bsim:probability>0.4</bsim:probability>
+      </bsim:concreteCostDriver>
+    </bsim:abstractCostDriver>
+    <bsim:abstractCostDriver id="Sifting" defaultTimeUnit="Hours">
+      <bsim:concreteCostDriver id="computer" LCAScores="0.0000585">
+        <bsim:duration timeUnit="HOURS">
+          <bsim:exponentialDistribution>
+            <bsim:mean>6</bsim:mean>
+          </bsim:exponentialDistribution>
+        </bsim:duration>
+        <bsim:probability>0.9</bsim:probability>
+      </bsim:concreteCostDriver>
+      <bsim:concreteCostDriver id="computer_lessStrict" LCAScores="0.0000293">
+        <bsim:duration timeUnit="HOURS">
+          <bsim:exponentialDistribution>
+            <bsim:mean>3</bsim:mean>
+          </bsim:exponentialDistribution>
+        </bsim:duration>
+        <bsim:probability>0.1</bsim:probability>
+      </bsim:concreteCostDriver>
+    </bsim:abstractCostDriver>
+    <bsim:abstractCostDriver id="Interview" defaultTimeUnit="Hours">
+      <bsim:concreteCostDriver id="video conference" timeUnit="1" LCAScores="0.000035">
+        <bsim:probability>1</bsim:probability>
+      </bsim:concreteCostDriver>
+    </bsim:abstractCostDriver>
+    <bsim:abstractCostDriver id="Application for employee" defaultTimeUnit="Hours">
+      <bsim:concreteCostDriver id="paper" LCAScores="0.0000431">
+        <bsim:probability>0.7</bsim:probability>
+      </bsim:concreteCostDriver>
+      <bsim:concreteCostDriver id="digital" LCAScores="0.0000195">
+        <bsim:probability>0.3</bsim:probability>
+      </bsim:concreteCostDriver>
+    </bsim:abstractCostDriver>
+    <bsim:abstractCostDriver id="Contract documents" defaultTimeUnit="Hours">
+      <bsim:concreteCostDriver id="paper" LCAScores="0.0000254">
+        <bsim:probability>0.5</bsim:probability>
+      </bsim:concreteCostDriver>
+      <bsim:concreteCostDriver id="digital" LCAScores="0.0000195">
+        <bsim:probability>0.5</bsim:probability>
+      </bsim:concreteCostDriver>
+    </bsim:abstractCostDriver>
+  </bsim:costDriver>
+</bsim:globalConfiguration>

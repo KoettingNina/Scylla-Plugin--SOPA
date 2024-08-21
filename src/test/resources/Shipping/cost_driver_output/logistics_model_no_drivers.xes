@@ -1,0 +1,2082 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- This file has been generated with the OpenXES library. It conforms -->
+<!-- to the XML serialization of the XES standard for log storage and -->
+<!-- management. -->
+<!-- XES standard version: 1.0 -->
+<!-- OpenXES library version: 1.0RC7 -->
+<!-- OpenXES is available from http://www.openxes.org/ -->
+<log xes.version="1.0" xes.features="nested-attributes" openxes.version="1.0RC7">
+	<extension name="Organizational" prefix="org" uri="http://www.xes-standard.org/org.xesext"/>
+	<extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext"/>
+	<extension name="Lifecycle" prefix="lifecycle" uri="http://www.xes-standard.org/lifecycle.xesext"/>
+	<extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext"/>
+	<global scope="trace">
+		<string key="concept:name" value="__INVALID__"/>
+	</global>
+	<global scope="event">
+		<string key="concept:name" value="__INVALID__"/>
+		<string key="lifecycle:transition" value="complete"/>
+	</global>
+	<classifier name="MXML Legacy Classifier" keys="concept:name lifecycle:transition"/>
+	<classifier name="Event Name" keys="concept:name"/>
+	<classifier name="Resource" keys="org:resource"/>
+	<classifier name="Event Name AND Resource" keys="concept:name org:resource"/>
+	<classifier name="Cost Driver" keys="cost:driver"/>
+	<classifier name="Cost Variant" keys="cost:variant"/>
+	<classifier name="Activity Cost" keys="cost:activity"/>
+	<classifier name="Process Instance Cost" keys="cost:Process_Instance"/>
+	<string key="description" value="Log file created in Scylla"/>
+	<string key="lifecycle:model" value="standard"/>
+	<string key="source" value="Scylla"/>
+	<string key="concept:name" value="Process_0vv8a1n"/>
+	<trace>
+		<string key="concept:name" value="1"/>
+		<string key="cost:Process_Instance" value="2.08049E-4"/>
+		<string key="cost:variant" value="Shipment and delivery over distance A"/>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T09:00:00+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T09:00:00+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T09:00:00+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T09:01:32+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Lorry): 7.839E-5"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-25T09:01:32+01:00"/>
+			<string key="cost:activity" value="7.839E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Lorry): 7.839E-5"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-25T09:03:04+01:00"/>
+			<string key="cost:activity" value="7.839E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_A_Lorry): 2.843E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2023-12-25T09:03:04+01:00"/>
+			<string key="cost:activity" value="2.843E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_A_Lorry): 2.843E-5"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T09:03:04+01:00"/>
+			<string key="cost:activity" value="2.843E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_A_Lorry): 2.843E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2023-12-25T09:04:36+01:00"/>
+			<string key="cost:activity" value="2.843E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_A_Lorry): 2.843E-5"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T09:04:36+01:00"/>
+			<string key="cost:activity" value="2.843E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T09:04:36+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T09:04:36+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T09:04:36+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T09:04:36+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T09:04:36+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T09:04:36+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-25T09:04:36+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T09:24:36+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T09:24:36+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T10:18:21+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T10:18:21+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T10:18:21+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T10:38:21+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T10:38:21+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T10:38:21+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-25T12:26:04+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T12:26:04+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T12:26:04+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-25T12:47:20+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T10:50:30+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T10:50:30+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T10:50:30+01:00"/>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="2"/>
+		<string key="cost:Process_Instance" value="2.3648900000000002E-4"/>
+		<string key="cost:variant" value="Shipment and delivery over distance B"/>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T09:30:00+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T09:30:00+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T09:30:00+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T09:34:11+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Lorry): 7.839E-5"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2023-12-25T09:34:11+01:00"/>
+			<string key="cost:activity" value="7.839E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Lorry): 7.839E-5"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2023-12-25T09:38:22+01:00"/>
+			<string key="cost:activity" value="7.839E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2023-12-25T09:38:22+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2023-12-25T09:42:33+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2023-12-25T09:42:33+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T09:42:33+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T09:42:33+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T09:42:33+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2023-12-25T09:46:44+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2023-12-25T09:46:44+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T09:46:44+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T09:46:44+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T10:02:33+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T10:18:21+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T10:38:21+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T13:59:49+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T13:59:49+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T13:59:49+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T15:58:56+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T11:39:56+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T11:39:56+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T11:39:56+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2023-12-27T10:47:42+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-27T10:47:42+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-27T10:47:42+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-28T15:02:04+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-28T15:02:04+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-28T15:02:04+01:00"/>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="3"/>
+		<string key="cost:Process_Instance" value="1.2968430000000002E-4"/>
+		<string key="cost:variant" value="Shipment and delivery over distance A_Electric"/>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T10:00:00+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T10:00:00+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T10:00:00+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T10:21:16+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Rail_Electric): 2.53E-8"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-25T12:26:04+01:00"/>
+			<string key="cost:activity" value="2.53E-8"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Rail_Electric): 2.53E-8"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-25T12:47:20+01:00"/>
+			<string key="cost:activity" value="2.53E-8"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_A_Lorry): 2.843E-5"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T14:51:38+01:00"/>
+			<string key="cost:activity" value="2.843E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_A_Lorry): 2.843E-5"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T15:12:54+01:00"/>
+			<string key="cost:activity" value="2.843E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_A_Lorry): 2.843E-5"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T15:12:54+01:00"/>
+			<string key="cost:activity" value="2.843E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T15:12:54+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T15:12:54+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T15:12:54+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T15:32:54+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_A_Lorry): 2.843E-5"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T15:34:10+01:00"/>
+			<string key="cost:activity" value="2.843E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T15:34:10+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T15:34:10+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T12:05:20+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T12:05:36+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T12:05:36+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T12:05:36+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T12:05:36+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T12:08:44+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T15:11:03+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T15:11:03+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T15:11:03+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-28T13:06:34+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-28T13:06:34+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-28T13:06:34+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-04T14:28:41+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-05T09:42:28+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-05T09:42:28+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-05T09:42:28+01:00"/>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="4"/>
+		<string key="cost:Process_Instance" value="2.3648900000000002E-4"/>
+		<string key="cost:variant" value="Shipment and delivery over distance B"/>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T10:30:00+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T10:30:00+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T10:30:00+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T10:41:41+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Lorry): 7.839E-5"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T13:59:49+01:00"/>
+			<string key="cost:activity" value="7.839E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Lorry): 7.839E-5"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T14:11:30+01:00"/>
+			<string key="cost:activity" value="7.839E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T10:50:30+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T11:02:11+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T11:02:11+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T11:02:11+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T11:02:11+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T11:13:52+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T11:13:52+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T11:13:52+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T11:13:52+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T11:33:52+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T16:00:35+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2023-12-27T10:47:42+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-27T11:01:39+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-27T11:01:39+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-27T11:01:39+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-28T12:10:20+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2023-12-29T11:36:09+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-29T11:36:09+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-29T11:36:09+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-29T13:31:55+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-29T13:31:55+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-29T13:31:55+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-05T09:42:28+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-09T14:17:49+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-09T14:17:49+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-09T14:17:49+01:00"/>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="5"/>
+		<string key="cost:Process_Instance" value="2.08049E-4"/>
+		<string key="cost:variant" value="Shipment and delivery over distance A"/>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T11:00:00+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T11:00:00+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T11:00:00+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T11:07:33+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Lorry): 7.839E-5"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T14:11:30+01:00"/>
+			<string key="cost:activity" value="7.839E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Lorry): 7.839E-5"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T14:19:03+01:00"/>
+			<string key="cost:activity" value="7.839E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_A_Lorry): 2.843E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T11:13:52+01:00"/>
+			<string key="cost:activity" value="2.843E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_A_Lorry): 2.843E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T11:21:25+01:00"/>
+			<string key="cost:activity" value="2.843E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_A_Lorry): 2.843E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T11:21:25+01:00"/>
+			<string key="cost:activity" value="2.843E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T11:21:25+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T11:21:25+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_A_Lorry): 2.843E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T11:28:58+01:00"/>
+			<string key="cost:activity" value="2.843E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T11:28:58+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T11:28:58+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T11:28:58+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T11:48:58+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-27T11:01:39+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-27T15:14:29+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-27T15:14:29+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-27T15:14:29+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-27T15:14:29+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-28T12:10:20+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-28T12:10:20+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-28T12:10:20+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-28T13:06:34+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-29T11:09:44+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-29T11:09:44+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-29T11:09:44+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2024-01-04T16:23:23+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2024-01-05T10:10:05+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-05T10:10:05+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-05T10:10:05+01:00"/>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="6"/>
+		<string key="cost:Process_Instance" value="1.581243E-4"/>
+		<string key="cost:variant" value="Shipment and delivery over distance B"/>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T11:30:00+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T11:30:00+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T11:30:00+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T11:58:48+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Rail_Electric): 2.53E-8"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T14:19:03+01:00"/>
+			<string key="cost:activity" value="2.53E-8"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Rail_Electric): 2.53E-8"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T14:47:51+01:00"/>
+			<string key="cost:activity" value="2.53E-8"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T11:28:58+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T11:39:56+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T11:57:46+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T11:57:46+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T11:57:46+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T11:57:46+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T12:08:44+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T12:08:44+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T12:08:44+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T12:17:46+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2023-12-29T11:36:09+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-01T12:25:47+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-01T13:31:51+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-01T13:31:51+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-01T13:31:51+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-02T09:27:20+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-02T09:27:36+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-02T09:27:36+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-02T09:27:36+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2024-01-04T16:23:23+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-04T16:23:23+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-04T16:23:23+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2024-01-05T10:10:05+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2024-01-05T10:18:13+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-05T10:18:13+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-05T10:18:13+01:00"/>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="7"/>
+		<string key="cost:Process_Instance" value="1.581243E-4"/>
+		<string key="cost:variant" value="Shipment and delivery over distance B"/>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T12:00:00+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T12:00:00+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T12:00:00+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T12:00:00+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Rail_Electric): 2.53E-8"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T14:47:51+01:00"/>
+			<string key="cost:activity" value="2.53E-8"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Rail_Electric): 2.53E-8"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T14:47:51+01:00"/>
+			<string key="cost:activity" value="2.53E-8"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T11:57:46+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T11:57:46+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T11:57:46+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T11:57:46+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T11:57:46+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T11:57:46+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T11:57:46+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T11:57:46+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T11:57:46+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T12:17:46+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-28T15:02:04+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-29T11:09:44+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-01T11:13:10+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-01T11:13:10+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-01T11:13:10+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-01T13:31:51+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2024-01-03T11:56:28+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-03T11:56:28+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-03T11:56:28+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-04T12:34:59+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-04T12:34:59+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-04T12:34:59+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2024-01-05T16:50:43+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2024-01-09T16:58:27+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-09T16:58:27+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-09T16:58:27+01:00"/>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="8"/>
+		<string key="cost:Process_Instance" value="2.3648900000000002E-4"/>
+		<string key="cost:variant" value="Shipment and delivery over distance B"/>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T12:30:00+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T12:30:00+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T12:30:00+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T12:33:47+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Lorry): 7.839E-5"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T14:47:51+01:00"/>
+			<string key="cost:activity" value="7.839E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Lorry): 7.839E-5"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T14:51:38+01:00"/>
+			<string key="cost:activity" value="7.839E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T11:57:46+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T12:01:33+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T12:01:33+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T12:01:33+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T12:01:33+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2023-12-26T12:05:20+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T12:05:20+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T12:05:20+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T12:05:20+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T12:25:20+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-29T13:31:55+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-01T11:13:10+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-01T12:25:47+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-01T12:25:47+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-01T12:25:47+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-02T09:27:20+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-02T09:27:20+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-02T09:27:20+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-02T09:27:36+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-02T12:29:55+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-02T12:29:55+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-02T12:29:55+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2024-01-05T10:18:13+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2024-01-05T11:59:36+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-05T11:59:36+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-05T11:59:36+01:00"/>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="9"/>
+		<string key="cost:Process_Instance" value="2.3648900000000002E-4"/>
+		<string key="cost:variant" value="Shipment and delivery over distance B"/>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T13:00:00+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T13:00:00+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T13:00:00+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T13:03:46+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Lorry): 7.839E-5"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T15:34:10+01:00"/>
+			<string key="cost:activity" value="7.839E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Lorry): 7.839E-5"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T15:37:56+01:00"/>
+			<string key="cost:activity" value="7.839E-5"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T15:11:03+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T15:14:49+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T15:14:49+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T15:14:49+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T15:14:49+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T15:18:35+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T15:18:35+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T15:18:35+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T15:18:35+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T15:38:35+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-02T12:29:55+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-02T15:01:30+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-02T15:01:30+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-02T15:01:30+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-02T15:01:30+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2024-01-03T11:56:28+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2024-01-03T14:57:32+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-03T14:57:32+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-03T14:57:32+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-04T14:28:41+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-04T14:28:41+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-04T14:28:41+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2024-01-05T11:59:36+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#2"/>
+			<date key="time:timestamp" value="2024-01-05T16:50:43+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-05T16:50:43+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-05T16:50:43+01:00"/>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="10"/>
+		<string key="cost:Process_Instance" value="1.581243E-4"/>
+		<string key="cost:variant" value="Shipment and delivery over distance B"/>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T13:30:00+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product received"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T13:30:00+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T13:30:00+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Packaging Material(Packaging_Material_B): 3.806E-5"/>
+			<string key="cost:driver" value="Filling Material(Filling_A): 1.468E-5"/>
+			<string key="concept:name" value="Package product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T13:51:00+01:00"/>
+			<string key="cost:activity" value="5.274E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Rail_Electric): 2.53E-8"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-25T15:37:56+01:00"/>
+			<string key="cost:activity" value="2.53E-8"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Shipment(Shipment_A_Rail_Electric): 2.53E-8"/>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Ship product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-25T15:58:56+01:00"/>
+			<string key="cost:activity" value="2.53E-8"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T15:18:35+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T15:39:35+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T15:39:35+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T15:39:35+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T15:39:35+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#0"/>
+			<string key="cost:driver" value="Delivery(Delivery_B_Lorry): 4.265E-5"/>
+			<string key="concept:name" value="Deliver to Door"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T16:00:35+01:00"/>
+			<string key="cost:activity" value="4.265E-5"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T16:00:35+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2023-12-26T16:00:35+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T16:00:35+01:00"/>
+		</event>
+		<event>
+			<string key="cost:driver" value="Receipt(Receipt): 1.153E-5"/>
+			<string key="concept:name" value="Print and post pick-up receipt"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-12-26T16:20:35+01:00"/>
+			<string key="cost:activity" value="1.153E-5"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2024-01-03T14:57:32+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-04T12:34:59+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-04T13:22:29+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-04T13:22:29+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-04T13:22:29+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-04T13:22:29+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Re-route to Packstation"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-08T14:10:56+01:00"/>
+			<string key="cost:driver" value="Re-Routing(Re-Routing_A_Lorry): 8.529E-6"/>
+			<string key="cost:activity" value="8.529E-6"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-08T14:10:56+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product delivered sucessfully"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-08T14:10:56+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-08T14:10:56+01:00"/>
+		</event>
+		<event>
+			<string key="org:resource" value="courier_#1"/>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-09T12:13:49+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-09T12:13:49+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-09T12:13:49+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Return product"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<string key="org:resource" value="courier_#3"/>
+			<date key="time:timestamp" value="2024-01-09T14:41:33+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="start"/>
+			<date key="time:timestamp" value="2024-01-09T14:41:33+01:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Product returned"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2024-01-09T14:41:33+01:00"/>
+		</event>
+	</trace>
+</log>

@@ -1,0 +1,60 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  build:
+
+    runs-on: [ubuntu-latest]
+    
+    strategy:
+      matrix:
+        java_version: [17]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK ${{ matrix.java_version }}
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Download and Unpack Scylla
+        run: |
+          # Define variables for URLs and target directory
+          SCYLLA_URL="https://github.com/bptlab/scylla/releases/download/0.0.1-SNAPSHOT/scylla.zip"
+          TARGET_DIR="${{ github.workspace }}/lib"
+          
+          # Create the target directory if it doesn't exist
+          mkdir -p $TARGET_DIR
+          
+          # Download the zip file
+          wget $SCYLLA_URL -O scylla.zip
+          
+          # Unpack the zip file
+          unzip scylla.zip
+          
+          # Move the JAR files to the target directory
+          mv scylla.jar $TARGET_DIR
+          mv scylla-tests.jar $TARGET_DIR
+
+      - name: Setup dependencies
+        run: mvn -B clean --file pom.xml
+
+      - name: Build with Maven
+        uses: coactions/setup-xvfb@v1
+        with:
+          run: mvn -B package --file pom.xml
