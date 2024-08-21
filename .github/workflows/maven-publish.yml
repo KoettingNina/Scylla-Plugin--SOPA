@@ -10,31 +10,6 @@ on:
     branches: [ main ]
 
 jobs:
-  pat:
-    name: Test PAT
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - name: Install dependencies
-        run: yarn install
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-
-  triage:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
-    steps:
-      - uses: actions/labeler@v4
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-
   Release:
     if: github.repository == 'INSM-TUM/Scylla-Plugin--SOPA'  # Only main repo has permissions to publish this
 
