@@ -1,5 +1,5 @@
-# BearCrow
-Simulate models with sustainability info, and process and visualize the simulation results.
+# Scylla Plugin for the SOPA Framework
+This repository contains a plugin for the business process simulation engine [Scylla](https://github.com/bptlab/scylla), extending it by the SOPA framework.
 
 ## ℹ️ About
 The plugin works by extending Scylla, a business process simulator, by processing sustainability information
