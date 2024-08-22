@@ -16,7 +16,7 @@ A quantified score of environmental impacts associated with the life cycle of a 
 
 
 
-### 🛠️ How to run it?
+## 🛠️ How to run it?
 ### [For Developers]
 1. git clone the repository
 2. [Download Scylla](https://github.com/bptlab/scylla/releases) and add Scylla.jar and scylla-tests.jar into the libs folder
