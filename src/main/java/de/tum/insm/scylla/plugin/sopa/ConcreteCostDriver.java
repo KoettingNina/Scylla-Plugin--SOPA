@@ -13,8 +13,8 @@ public class ConcreteCostDriver extends CostDriver {
     @NonNull
     protected Double LCAScore;
     private static OpenLcaCostCalculator costCalculator;
-    //TODO: evtl localhost, wenn es im container läuft
-    private static String bridgeServerUrl = "http://host.docker.internal:8081";
+    
+    private static String bridgeServerUrl = "http://localhost:8081";
     
     // Add cache for calculated costs
     private static final Map<String, Double> costCache = new HashMap<>();
