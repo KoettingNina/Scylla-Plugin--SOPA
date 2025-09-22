@@ -31,7 +31,6 @@ A quantified score of environmental impacts associated with the life cycle of a 
 2. [Download Scylla](https://github.com/bptlab/scylla/releases) and add Scylla.jar and scylla-tests.jar into the libs folder
 3. Navigate to src/main/java/cost_driver/Main and run.
 4. Select the desired configuration files in the samples UI and check "cost_driver" as a plugin.
-<img width="1822" alt="Screenshot 2024-01-17 at 23 10 06" src="https://github.com/mhunter02/BearCrow-private/assets/85895529/83200e2f-5fce-4098-8c8e-0b2224d9d91e">
 5. The logged data files will be found in a folder with the format: "output_yy_mm_dd...."
 
 #### NOTE
@@ -63,6 +62,7 @@ A demo video can be found [here](https://youtu.be/ag2_OvQh5vY).
 ## 🧱 Components
 Three plugin classes are cooperating to achieve this.
 
+
 ## 📊 Distribution Support 
 The plugin now supports various statistical distributions for cost driver amounts, enabling more realistic and sophisticated environmental impact simulations:
 
@@ -80,6 +80,7 @@ The plugin now supports various statistical distributions for cost driver amount
 - Dynamic LCA calculations using OpenLCA product systems
 - Configurable impact methods and normalization sets
 - Built-in caching for improved performance
+
 
 ### Global Configuration Parser Plugin
 Parses the global config file which describes the abstract CDs and their children, concreteCDs with details that it consists of. **New**: Now supports OpenLCA integration configuration:
