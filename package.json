@@ -1,0 +1,26 @@
+{
+  "name": "scylla-plugin--sopa",
+  "version": "1.0.0",
+  "description": "This repository contains a plugin for the business process simulation engine [Scylla](https://github.com/bptlab/scylla), extending it by the [SOPA framework](http://arxiv.org/abs/2405.01176) for sustainability-oriented process analysis and re-design.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KoettingNina/Scylla-Plugin--SOPA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KoettingNina/Scylla-Plugin--SOPA/issues"
+  },
+  "homepage": "https://github.com/KoettingNina/Scylla-Plugin--SOPA#readme",
+  "dependencies": {
+    "electron": "^36.1.0"
+  }
+}

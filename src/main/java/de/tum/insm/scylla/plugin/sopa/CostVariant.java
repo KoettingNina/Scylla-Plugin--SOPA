@@ -1,8 +1,9 @@
 package de.tum.insm.scylla.plugin.sopa;
 
-import org.springframework.lang.NonNull;
+import java.util.HashMap;
+import java.util.Map;
 
-import java.util.*;
+import org.springframework.lang.NonNull;
 
 public class CostVariant {
 
@@ -12,11 +13,13 @@ public class CostVariant {
     protected Double frequency;
     @NonNull
     protected Map<String, String> concretisedACD;
+    private Map<String, Map<String, Object>> driverDistributions;
 
     public CostVariant(@NonNull String id, @NonNull Double frequency, @NonNull Map<String, String> concretisedACD) {
         this.concretisedACD = concretisedACD;
         this.frequency = frequency;
         this.id = id;
+        this.driverDistributions = new HashMap<>();
     }
 
     public String getId() {
@@ -29,6 +32,14 @@ public class CostVariant {
 
     public Map<String, String> getConcretisedACD() {
         return concretisedACD;
+    }
+
+    public Map<String, Map<String, Object>> getDriverDistributions() {
+        return driverDistributions;
+    }
+
+    public void setDriverDistributions(Map<String, Map<String, Object>> driverDistributions) {
+        this.driverDistributions = driverDistributions;
     }
 
 }
