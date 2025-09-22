@@ -6,7 +6,9 @@ The plugin extends Scylla with sustainability information of business processes.
 The resulting simulations provide insights into the environmental impact of business processes and their activities.
 
 ### What are Cost Drivers?
-Cost Drivers (CD) describe factors of environmental impact for activities. Abstract cost drivers (ACD) constitute the general categories of cost driver and activity has. Concrete cost drivers (CCD) are the concretized cases of the ACDs. As en example, in an activity "Delivery packages", the method of delivery can be considered as an ACD while delivery by a bicycle can be one of its concretizations.
+Cost Drivers (CD) describe factors of environmental impact for activities. Abstract cost drivers (ACD) constitute the general categories of cost driver and activity has. Concrete cost drivers (CCD) are the concretized cases of the ACDs. As an example, in an activity "Delivery packages", the method of delivery can be considered as an ACD while delivery by a bicycle can be one of its concretizations.
+
+**New**: Cost drivers now support dynamic distributions for more realistic simulation scenarios. Each concrete cost driver can have an associated distribution that determines variable amounts during process execution.
 
 ### What are Cost Variants?
 Cost variants govern what specific combinations of concretizations can occur during individual process instances based on the environmental cost driver hierarchy. In other words, what sets of concrete environmental cost drivers can, during process execution, take the place of the abstract environmental cost drivers during activity execution?
@@ -14,9 +16,16 @@ Cost variants govern what specific combinations of concretizations can occur dur
 ### What are LCA Scores?
 A quantified score of environmental impacts associated with the life cycle of a commercial product.
 
+**New**: The plugin now integrates with OpenLCA for dynamic LCA calculations. Cost drivers can reference OpenLCA product systems and calculate environmental impacts using specific impact methods and normalization sets, with built-in caching for performance optimization.
+
 
 
 ## 🛠️ How to run it?
+
+### Prerequisites **new**
+- **OpenLCA Integration**: If using dynamic LCA calculations, ensure OpenLCA is running with the SimuBridge server on `http://localhost:8081` 
+
+
 ### [For Developers]
 1. git clone the repository
 2. [Download Scylla](https://github.com/bptlab/scylla/releases) and add Scylla.jar and scylla-tests.jar into the libs folder
@@ -53,24 +62,62 @@ A demo video can be found [here](https://youtu.be/ag2_OvQh5vY).
 ## 🧱 Components
 Three plugin classes are cooperating to achieve this.
 
+
+## 📊 Distribution Support 
+The plugin now supports various statistical distributions for cost driver amounts, enabling more realistic and sophisticated environmental impact simulations:
+
+### Supported Distribution Types:
+- **Constant Distribution**: Fixed values for deterministic scenarios
+- **Exponential Distribution**: For modeling time-related environmental impacts
+- **Normal Distribution**: For naturally varying processes with known mean and variance
+- **Uniform Distribution**: For scenarios with equal probability across a range
+- **Triangular Distribution**: For processes with a most likely value and bounds
+- **Erlang Distribution**: For modeling service times and waiting periods
+- **Binomial Distribution**: For discrete outcomes with fixed probability
+- **Arbitrary Finite Distribution**: For custom discrete probability distributions
+
+### OpenLCA Integration:
+- Dynamic LCA calculations using OpenLCA product systems
+- Configurable impact methods and normalization sets
+- Built-in caching for improved performance
+
+
 ### Global Configuration Parser Plugin
-Parses the global config file which describes the abstract CDs and their children, concreteCDs with details that it consists of:
+Parses the global config file which describes the abstract CDs and their children, concreteCDs with details that it consists of. **New**: Now supports OpenLCA integration configuration:
 ```xml
 <bsim:costDriver>
+    
+    
+    
     <bsim:abstractCostDriver id="[Abstract Cost Driver ID]">
-      <bsim:concreteCostDeiver id="[Concrete Cost Driver ID]" cost="[LCA Score]"/>
-      <bsim:concreteCostDeiver id="[Concrete Cost Driver ID]" cost="[LCA Score]"/>
+      <bsim:concreteCostDriver id="[Concrete Cost Driver ID]" cost="[LCA Score]"/>
+      <bsim:concreteCostDriver id="[Concrete Cost Driver ID]" cost="[LCA Score]"/>
 	...
     </bsim:abstractCostDriver>
 	...
-
+</bsim:costDriver>
+<bsim:impactMethodInfo 
+        selectedImpactMethod="[Impact Method ID]" 
+        selectedNormalizationSet="[Normalization Set ID]"/>
 ```
 ### Simulation Configuration Parser Plugin
-Parses the simulation config file which describes the cost variant by ID, frequency of occurrence, and cost:
+Parses the simulation config file which describes the cost variant by ID, frequency of occurrence, and cost. **New**: Now supports distribution configurations for each cost driver (as an example constant distribution and normal distribution):
 ```xml
 <bsim:costVariantConfig>
       <bsim:variant id="[Cost Variant ID]" frequency="[double]">
-        <bsim:driver absractId="[Abstract Cost Driver ID]" concreteId="[Concrete Cost Driver ID]"/>
+        <bsim:driver abstractId="[Abstract Cost Driver ID]" concreteId="[Concrete Cost Driver ID]">
+          <bsim:distribution>
+            <bsim:constantDistribution>
+              <bsim:constantValue>[value]</bsim:constantValue>
+            </bsim:constantDistribution>
+            
+            <bsim:normalDistribution>
+              <bsim:mean>[mean_value]</bsim:mean>
+              <bsim:variance>[variance_value]</bsim:variance>
+            </bsim:normalDistribution>
+            
+            
+        </bsim:driver>
       </bsim:variant>
 ```
 ### Logger Plugin
